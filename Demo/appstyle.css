@@ -1,0 +1,40 @@
+body {
+    text-align: center;
+    background-color: white;
+    }
+    img {
+    height: 230px;
+    width: 330px;
+    }
+    li{
+    border: 1px red solid;
+    list-style-type: square ;
+    
+    }
+    h1 {
+      color:white;
+      background-color:red;
+      text-align:center;
+      font-style:italic;
+      font-family:monospace;
+      border: 2px solid;
+    }
+    label {
+        color:red;
+        font-style:oblique;
+        font-family:italic;
+        font-size:16px;
+    }
+    .Div1 {
+        color:red;
+        background-color:white;
+        text-align:center;
+        font-style:italic;
+        font-family:monospace;
+        border: 2px solid;
+      }
+      hr {
+          color:red;
+          border:1px solid;
+      }
+      

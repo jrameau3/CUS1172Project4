@@ -1,0 +1,64 @@
+<html>
+
+<head>
+  <!-- Include handlebars library -->
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+  <!-- Script for our application -->
+
+  <script src="app_code_dev.js"> </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="appstyle.css">
+  <title>CUS Courses</title>
+</head>
+
+<body>
+  <div class="jumbotron text-center Div1">
+    <h1>CUS Course Search</h1>
+    <p>Enter a parameter to search below!</p>
+  </div>
+  <img src = "https://stjenglish.com/wp-content/uploads/St.-Johns-University-Kishanattam-Kerala-600x381.jpg"/>
+  <form onsubmit="return false;" id="queryForm">
+
+    <label for="nameQuery">Search by Instructor name:</label><br>
+    <input type="text" id="nameQuery" name="nameQuery" value=""><br>
+    <input id="queryByName" type="button" onclick="updateView(this)" value="Search" data-querytype="by_name">
+    <hr>
+    <label for="titleQuery">Search by Course Title:</label><br>
+    <input type="text" id="titleQuery" name="titleQuery" value=""><br>
+    <input id="queryByTitle" type="button" onclick="updateView(this)" value="Search" data-querytype="by_title">
+    <hr>
+    <label for="codeQuery">Search by Course Code</Code>:</label><br>
+    <input type="text" id="codeQuery" name="codeQuery" value=""><br>
+    <input id="queryByNumber" type="button" onclick="updateView(this)" value="Search" data-querytype="by_course_code">
+    <hr>
+    <label for="levelQuery">Search by Course Level:</label><br>
+    <input type="text" id="levelQuery" name="levelQuery" value=""> </input><br>
+    <input id="queryByLevel" type="button" onclick="updateView(this)" value="Search" data-querytype="by_level">
+    <hr>
+    <label for="combinedQuery"> Search by Instructor name and Course Level: </label> <br />
+    <input type="text" id="instructorQuery" name="intructorQuery" value=""> </input>
+    <input type="text" id="combined_levelQuery" name="combined_levelQuery" value=""> </input><br>
+    <input id="queryCombined" type="button" onclick="updateView(this)" value="Search" data-querytype="combined_name_level">
+    <hr>
+    <input id="clear" type="button" onclick="clearButton(this)" value="Clear Entries" data-querytype="clear">
+    <hr>
+  </form>
+  <div id="results">
+  </div>
+</body>
+
+</html>
+
+<script id="show_results_view" type="text/x-handlebars-template">
+      <ul>
+        {{#each courses}}
+        <li> Instructor: {{this.instructor}} | Title: {{this.title}} | Code: {{this.course_code}} | Level: {{this.course_level}}
+          {{/each}}
+    </ul>
+    </script>
+  
